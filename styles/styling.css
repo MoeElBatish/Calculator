@@ -1,0 +1,19 @@
+html {
+    font-size: 10px;
+    background: url(https://image.freepik.com/free-vector/golden-ratio_46706-464.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.container {
+    background-color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    height: 500px;
+    width: 500px;
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+}
