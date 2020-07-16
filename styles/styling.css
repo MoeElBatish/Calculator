@@ -53,7 +53,16 @@ p {
 .number {
     background-color: rgb(214, 111, 255);
 }
-.operator {
+.operator{
     background-color: orange;
     font-size: 20px;
 }
+#decimal {
+    background-color: rgb(109, 45, 211);
+    font-size: 20px;
+}
+#equals {
+    background-color: rgb(27, 7, 100);
+    font-size: 20px;
+}
+
