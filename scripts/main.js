@@ -3,6 +3,8 @@ let operators = Array.from(document.querySelectorAll(".operator"));
 const numbers = Array.from(document.querySelectorAll(".number"));
 const equals = document.querySelector("#equals");
 const decimal = document.querySelector("#decimal");
+const clear = document.querySelector("#clear");
+const del = document.querySelector("#delete");
 // all available standard operators
 const operations = {
     "+": (a,b) => {
@@ -109,4 +111,10 @@ decimal.addEventListener("click", (e) => {
         display.textContent += ".";
     }
 });
+clear.addEventListener("click", (e) => {
+    display.textContent = "";
+})
+del.addEventListener("click", (e) => {
+    display.textContent = display.textContent.slice(0, -1);
+})
 
