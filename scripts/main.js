@@ -1,6 +1,8 @@
 let display = document.querySelector("#result");
 let operators = Array.from(document.querySelectorAll(".operator"));
 const numbers = Array.from(document.querySelectorAll(".number"));
+const equals = document.querySelector("#equals");
+const decimal = document.querySelector("#decimal");
 // all available standard operators
 const operations = {
     "+": (a,b) => {
@@ -48,6 +50,20 @@ const addOperator = (exp) => {
         return false;
     }
 }
+// canDecimal(exp) returns true if a decimal place can be added
+// into the display
+// String -> Boolean
+const canDecimal = (exp) => {
+    let arr = exp.trim().split(" ");
+    if (typeof(Number(arr[arr.length-1])) === 'number') {
+        if ((arr[arr.length-1].includes(".")) || arr[arr.length-1].length === 0) {
+            return false;
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
 // evaluate(arr) evaluates the array expression recieved from 
 // the format function and return the answer
 // Array -> Number
@@ -82,4 +98,15 @@ operators.forEach((curr) => {
         } 
     })
 })
+// adding event listener seperately for the = button
+equals.addEventListener("click", (e) => {
+     if (isExp(display.textContent)) {
+        display.textContent = evaluate(format(display.textContent))
+     }
+});
+decimal.addEventListener("click", (e) => {
+    if (canDecimal(display.textContent)) {
+        display.textContent += ".";
+    }
+});
 
