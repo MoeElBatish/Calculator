@@ -106,14 +106,17 @@ equals.addEventListener("click", (e) => {
         display.textContent = evaluate(format(display.textContent))
      }
 });
+// adding event listener to add a decimal place
 decimal.addEventListener("click", (e) => {
     if (canDecimal(display.textContent)) {
         display.textContent += ".";
     }
 });
+// adding an event listener to clear the display
 clear.addEventListener("click", (e) => {
     display.textContent = "";
 })
+// adding an event listener to delete the last character from the display
 del.addEventListener("click", (e) => {
     display.textContent = display.textContent.slice(0, -1);
 })
